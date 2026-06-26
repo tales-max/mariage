@@ -1,0 +1,193 @@
+:root {
+    --gold: #09090b;
+    --cream: #ffbecd7f;
+    --text: #000000;
+    color: aliceblue,orchid;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* --- ÉCRAN DU SCEAU --- */
+#gate {
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity: 0.3;
+}
+
+.wax-seal {
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle, #ffabe2, #ff646c);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(48, 31, 31, 0.374);
+    z-index: 2;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+
+.wax-seal:active {
+    transform: scale(0.9);
+}
+
+.wax-seal span {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.instruction {
+    margin-top: 25px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: var(--gold);
+    animation: breathe 2s infinite ease-in-out;
+}
+
+/* --- CONTENU PRINCIPAL --- */
+main {
+    opacity: 0;
+    padding-bottom: 80px;
+}
+
+section {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.castle-img {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 20px;
+    filter: sepia(20%);
+}
+
+h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4.5rem;
+    color: var(--gold);
+     margin-top: 20px;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    color: var(--gold);
+}
+
+.description {
+    max-width: 280px;
+    line-height: 1.8;
+    font-weight: 200;
+    font-size: 0.9rem;
+}
+
+/* --- WIDGETS --- */
+.countdown-container {
+    display: flex;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.time-box {
+    border: 0.5px solid var(--gold);
+    padding: 10px;
+    min-width: 80px;
+    font-size: 0.7rem;
+    font-family: 'Cinzel', serif;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.colors {
+    display: flex;
+    gap: 15px;
+}
+
+.dot {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn-maps {
+    margin-top: 20px;
+    padding: 18px 40px;
+    background: var(--gold);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    border-radius: 50px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes breathe {
+    0%, 100% { opacity: 0.4; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-5px); }
+}
+
+.reveal { 
+    opacity: 0; 
+    transform: translateY(40px); 
+}
+.photo-wrapper {
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    border: 8px solid white; /* Effet cadre photo */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); /* Un petit angle pour le style "album" */
+}
+
+.wedding-photo {
+    width: 100%;
+    display: block;
+}
+.opp{
+    color: #ff000d;
+}
+
+/* On ajuste le H1 pour qu'il ne soit pas trop collé à la photo */
