@@ -4,21 +4,32 @@
     --text: #000000;
     color: aliceblue,orchid;
 }
-
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
-
 body {
-    background-color: var(--cream);
-    font-family: 'Montserrat', sans-serif;
-    color: var(--text);
-    overflow-x: hidden;
-    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url('image3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+#main,
+#hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('image3.jpg');   /* <-- نفس اسم الصورة هنا */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* --- ÉCRAN DU SCEAU --- */
 #gate {
     position: fixed;
@@ -30,7 +41,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .envelope-bg {
     position: absolute;
     width: 100%;
@@ -38,7 +48,6 @@ body {
     background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     opacity: 0.3;
 }
-
 .wax-seal {
     width: 130px;
     height: 130px;
@@ -53,32 +62,30 @@ body {
     border: 2px solid rgba(255,255,255,0.2);
     transition: transform 0.3s ease;
 }
-
 .wax-seal:active {
     transform: scale(0.9);
 }
-
 .wax-seal span {
     font-family: 'Pinyon Script', cursive;
     font-size: 3rem;
     color: var(--white);
 }
-
 .instruction {
     margin-top: 25px;
     font-family: 'Cinzel', serif;
     letter-spacing: 3px;
-    font-size: 0.75rem;
-    color: var(--gold);
+    font-size: 20px;
+    color: white;
     animation: breathe 2s infinite ease-in-out;
+    text-align: center;
+    direction: rtl;
+    width: 100%;
 }
-
 /* --- CONTENU PRINCIPAL --- */
 main {
     opacity: 0;
     padding-bottom: 80px;
 }
-
 section {
     min-height: 100vh;
     padding: 40px 20px;
@@ -87,21 +94,18 @@ section {
     align-items: center;
     justify-content: center;
 }
-
 .castle-img {
     width: 100%;
     max-width: 450px;
     margin-bottom: 20px;
     filter: sepia(20%);
 }
-
 h1 {
     font-family: 'Pinyon Script', cursive;
     font-size: 4.5rem;
     color: var(--gold);
      margin-top: 20px;
 }
-
 h2 {
     font-family: 'Cinzel', serif;
     letter-spacing: 5px;
@@ -109,40 +113,39 @@ h2 {
     margin: 20px 0;
     color: var(--gold);
 }
-
 .description {
     max-width: 280px;
     line-height: 1.8;
     font-weight: 200;
     font-size: 0.9rem;
 }
-
 /* --- WIDGETS --- */
 .countdown-container {
     display: flex;
     gap: 10px;
     margin: 40px 0;
+   
 }
-
 .time-box {
-    border: 0.5px solid var(--gold);
+    border: 1px solid #ffffff;
     padding: 10px;
     min-width: 80px;
     font-size: 0.7rem;
     font-family: 'Cinzel', serif;
+    color: #ffffff; 
+   
 }
-
 .time-box span {
     display: block;
     font-size: 1.6rem;
     margin-bottom: 5px;
+    color: #ffffff; 
 }
-
 .colors {
     display: flex;
     gap: 15px;
+   
 }
-
 .dot {
     width: 35px;
     height: 35px;
@@ -150,7 +153,6 @@ h2 {
     border: 1px solid #eee;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-
 .btn-maps {
     margin-top: 20px;
     padding: 18px 40px;
@@ -162,16 +164,16 @@ h2 {
     font-size: 0.8rem;
     border-radius: 50px;
 }
-
 /* --- ANIMATIONS --- */
 @keyframes breathe {
     0%, 100% { opacity: 0.4; transform: translateY(0); }
     50% { opacity: 1; transform: translateY(-5px); }
 }
-
 .reveal { 
     opacity: 0; 
     transform: translateY(40px); 
+    color: #ccc;
+    
 }
 .photo-wrapper {
     width: 90%;
@@ -181,7 +183,6 @@ h2 {
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     transform: rotate(-2deg); /* Un petit angle pour le style "album" */
 }
-
 .wedding-photo {
     width: 100%;
     display: block;
@@ -189,5 +190,55 @@ h2 {
 .opp{
     color: #ff000d;
 }
+/* --- Bloc du haut : Bismillah + intro --- */
+.intro-card {
+    width: 110%;
+   
+    padding: 30px 25px;
+   
+    border-bottom: 1px solid #e8b8cc;
+    text-align: center;
+}
+.bismillah-text {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    color: #f6ebef;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+.intro-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(242, 242, 240);
+    line-height: 1.8;
+    max-width: 320px;
+    margin: 0 auto;
+    direction: rtl;
+}
 
-/* On ajuste le H1 pour qu'il ne soit pas trop collé à la photo */
+/* --- Panneau détails (contenu de la photo) --- */
+.rsvp-panel {
+    max-height: 0;
+    overflow: hidden;
+    width: 90%;
+    max-width: 380px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e8b8cc;
+    border-radius: 12px;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+    padding: 0 20px;
+    text-align: right;
+    direction: rtl;
+}
+.rsvp-panel.open {
+    max-height: 500px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.rsvp-line { margin-bottom: 12px; font-size: 20px; }
+.rsvp-label { font-weight: bold; color: var(--gold); margin-inline-end: 6px; }
+.rsvp-fields { display: flex; flex-direction: column; gap: 10px; margin: 15px 0; }
+.rsvp-field { display: flex; justify-content: space-between; border-bottom: 1px dashed #ccc; padding-bottom: 6px; }
+.rsvp-note { font-size: 20px; color: #ff000d; border: 1px solid #ff000d; padding: 10px; border-radius: 8px; margin-top: 10px;text-align: center; }
